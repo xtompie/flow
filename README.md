@@ -58,7 +58,7 @@ echo $animals->first();
 - separated definition from execution
 - named transformations using ubiquitous/business language
 - encapsulation
-- clean, more redable code
+- clean, more readable code
 
 ```php
 <?php
