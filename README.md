@@ -66,6 +66,7 @@ echo $animals->first();
 class Animals
 {
     use Flow;
+    use FlowFilter;
     use FlowMap;
     use FLowPublicFirst;
     use FLowSort;
