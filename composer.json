@@ -1,0 +1,20 @@
+{
+    "name": "xtompie/flow",
+    "description": "Flow collections",
+    "type": "library",
+    "require": {
+        "illuminate/collections": "^8.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xtompie\\Flow\\": ""
+        }
+    },    
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xtompie",
+            "email": "xtompie@xtompie.xtompie"
+        }
+    ]
+}
