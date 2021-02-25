@@ -66,7 +66,6 @@ echo $animals->first();
 class Animals
 {
     use Flow;
-    use FlowMake;
     use FlowMap;
     use FLowPublicFirst;
     use FLowSort;
@@ -92,7 +91,7 @@ class Animals
     }
 }
 
-$animals = Animals::make(['rat', 'cat', 'lion', 'puma', 'dog'])
+$animals = (new Animals(['rat', 'cat', 'lion', 'puma', 'dog']))
     ->alfabetic()
     ->pets()
     ->pretty()
