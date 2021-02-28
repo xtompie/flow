@@ -48,6 +48,12 @@ print_r($animals->get());
 ```php
 <?php
 
+use Xtompie\Flow\Flow;
+use Xtompie\Flow\FlowFilter;
+use Xtompie\Flow\FlowGet;
+use Xtompie\Flow\FlowMap;
+use Xtompie\Flow\FLowSort;
+
 class Animals
 {
     use Flow;
