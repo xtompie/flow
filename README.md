@@ -81,6 +81,7 @@ $animals = (new Animals(['rat', 'cat', 'lion', 'puma', 'dog']))
     ->alfabetic()
     ->pets()
     ->pretty()
+;
 
 print_r($animals->get());
 ```
