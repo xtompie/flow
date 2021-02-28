@@ -69,7 +69,7 @@ class Animals
     
     public function pets()
     {
-        $pets = ['cat', 'dog', 'rat']);
+        $pets = ['cat', 'dog', 'rat'];
         return $this->filter(function($animal) use ($pets) {
             return in_array($animal, $pets);
         });
