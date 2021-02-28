@@ -2,19 +2,22 @@
     "name": "xtompie/flow",
     "description": "Flow collections",
     "type": "library",
-    "require": {
-        "illuminate/collections": "^8.29"
-    },
-    "autoload": {
-        "psr-4": {
-            "Xtompie\\Flow\\": ""
-        }
-    },    
     "license": "MIT",
     "authors": [
         {
-            "name": "xtompie",
-            "email": "xtompie@xtompie.xtompie"
+            "name": "Tomasz Pielczyk",
+            "email": "tomasz.pielczyk@gmail.com"
         }
-    ]
+    ],    
+    "autoload": {
+        "psr-4": {
+            "Xtompie\\Flow\\": "src"
+        }
+    },    
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }

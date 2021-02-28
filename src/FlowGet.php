@@ -2,9 +2,9 @@
 
 namespace Xtompie\Flow;
 
-trait FlowAll
+trait FlowGet
 {
-    protected function all()
+    protected function get()
     {
         return $this->flow->all();
     }
