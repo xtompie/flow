@@ -4,8 +4,12 @@ namespace Xtompie\Flow;
 
 trait FlowReduce
 {
-    protected function map($callback)
+    protected function reduce($callback)
     {
-        return new static($this->flow->reduce($callback, collect())->all());
+        $carry = [];
+        foreach ($this->data as $key => $value) {
+            $carry = $callback($carry, $value, $key);
+        }
+        return new static($carry);
     }
 }

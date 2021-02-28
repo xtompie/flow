@@ -6,8 +6,15 @@ trait FlowOnly
 {
     protected function only($keys)
     {
-        return new static($this->flow->filter(function($item) use ($keys) {
-            return collect($item)->only($keys)->all();
-        })->all());
+        $data = $this->data;
+        foreach ($data as $key => $value) {
+            foreach ($value as $value_key =>  $value_value) {
+                if (!in_array($value_key, $keys)) {
+                    unset($value[$value_key]);
+                }
+            }
+            $data[$key] = $value;
+        }
+        return new static($data);
     }
 }

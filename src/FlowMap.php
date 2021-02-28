@@ -6,6 +6,10 @@ trait FlowMap
 {
     protected function map($callback)
     {
-        return new static($this->flow->map($callback)->all());
+        $data = $this->data;
+        foreach ($data as $key => $value) {
+            $data[$key] = $callback($value, $key);
+        }
+        return new static($data);
     }
 }

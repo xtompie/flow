@@ -1,9 +1,21 @@
-Flow
-====
+# Flow
 
-Flow collection
+Flow is the way and helpers traits to help build rich collections which better describe business language.
 
-1. Plain php
+Flow gives:
+- separated definition from execution,
+- named transformations using ubiquitous/business language,
+- encapsulation,
+- clean, more readable code.
+
+Flow is immutable.
+
+## Example
+
+To illustrate, let's go through the various implementation options:
+
+### Plain procedural
+
 ```php
 <?php
 
@@ -28,37 +40,10 @@ foreach ($animals as $index => $animal) {
 }
 
 // first
-reset($animals);
-echo current($animals);
+print_r($animals->get());
 ```
 
-2. With Illuminate Collections
-
-```php
-<?php
-
-$pets = collect(['cat', 'dog', 'rat']);
-$animals = collec(['rat', 'cat', 'lion', 'puma', 'dog'])
-    // alfabetic
-    ->sort()
-    // only pets
-    ->filter(function($animal) use ($pets) {
-        return $pets->contains($animal);
-    })
-    // pretty
-    ->map(function($animal) {
-        return ucfirst($animal);
-    })
-;
-
-echo $animals->first();
-```
-
-3. With flow
-- separated definition from execution
-- named transformations using ubiquitous/business language
-- encapsulation
-- clean, more readable code
+### Using Flow
 
 ```php
 <?php
@@ -67,8 +52,8 @@ class Animals
 {
     use Flow;
     use FlowFilter;
+    use FlowGet;
     use FlowMap;
-    use FLowPublicFirst;
     use FLowSort;
 
     public function alfabetic()
@@ -78,9 +63,9 @@ class Animals
     
     public function pets()
     {
-        $pets = collect(['cat', 'dog', 'rat']);
+        $pets = ['cat', 'dog', 'rat']);
         return $this->filter(function($animal) use ($pets) {
-            return $pets->contains($animal);
+            return in_array($animal, $pets);
         });
     }
     
@@ -97,5 +82,5 @@ $animals = (new Animals(['rat', 'cat', 'lion', 'puma', 'dog']))
     ->pets()
     ->pretty()
 
-echo $animals->first();
+print_r($animals->get());
 ```

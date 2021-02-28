@@ -6,6 +6,6 @@ trait FlowFilter
 {
     protected function filter($callback)
     {
-        return new static($this->flow->filter($callback)->all());
+        return new static(array_filter($this->data, $callback, ARRAY_FILTER_USE_BOTH));
     }
 }

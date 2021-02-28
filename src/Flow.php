@@ -4,10 +4,10 @@ namespace Xtompie\Flow;
 
 trait Flow
 {
-    protected $flow;
+    protected $data;
 
     public function __construct(array $data)
     {
-        $this->flow = collect($data);
+        $this->data = $data;
     }
 }

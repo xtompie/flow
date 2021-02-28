@@ -4,8 +4,8 @@ namespace Xtompie\Flow;
 
 trait FlowGet
 {
-    protected function get()
+    public function get()
     {
-        return $this->flow->all();
+        return $this->data;
     }
 }
